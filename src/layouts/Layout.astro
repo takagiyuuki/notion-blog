@@ -75,8 +75,8 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
   <body>
     <GoogleAnalytics trackingId={PUBLIC_GA_TRACKING_ID} />
     <!-- Start Custom Navigation Bar -->
-    <div>
-      <header class="custom-nav">
+    <div class="custom-nav">
+      <header class="nav-header">
         <h1><a href="https://portfolio-azi.pages.dev" class="site-title">Portfolio website</a></h1>
       </header>
       <nav class="nav-bar">
@@ -180,6 +180,12 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
 <style define:vars={{ asidePaddingTop }}>
 /* Start Custom Page */
 .custom-nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10000;
+}
+.nav-header {
     background-color: var(--nav-bar-background);
     border: none;
 }
@@ -228,6 +234,9 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
   .container {
     display: flex;
     min-height: 100vh;
+    /* Start Custom Page */
+    padding-top: 150px;
+    /* End Custom Page */
   }
   @media (max-width: 640px) {
     .container {
