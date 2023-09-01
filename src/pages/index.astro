@@ -54,7 +54,7 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
   <div slot="aside" class={styles.aside}>
     <h1>
       <a href="https://portfolio-azi.pages.dev">PPORTFOLIO</a></h1>
-      <img src="https://avatars.githubusercontent.com/u/64290748?v=4" alt="portfolio" class="styles.img">
+      <img src="https://avatars.githubusercontent.com/u/64290748?v=4" alt="portfolio" class={styles.img}>
     <BlogPostsLink heading="Recommended" posts={rankedPosts} />
     <BlogTagsLink heading="Categories" tags={tags} />
   </div>
