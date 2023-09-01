@@ -77,7 +77,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
     <!-- Start Custom Navigation Bar -->
     <div>
       <header class="custom-nav">
-        <h1 class="site-title"><a href="https://portfolio-azi.pages.dev">Portfolio website</a></h1>
+        <h1><a href="https://portfolio-azi.pages.dev" class="site-title">Portfolio website</a></h1>
       </header>
       <nav class="nav-bar">
         <ul class="nav-links">
@@ -181,6 +181,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
 /* Start Custom Page */
 .custom-nav {
     background-color: var(--nav-bar-background);
+    border: none;
 }
 .site-title {
     padding-left: 1rem;
@@ -195,8 +196,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
     color: var(--hover);
 }
 .nav-bar {
-  background-color: var(--nav-bar-font);
-  border: solid;
+  background-color: var(--nav-bar-background);
 }
 @media (max-width: 500px) {
   .nav-bar {
@@ -216,12 +216,12 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
   margin-bottom: 0;
 }
 .nav-linktext {
-  color: var(--nav-bar-background);
+  color: var(--nav-bar-font);
   font-weight: bold;
   text-decoration: none;
 }
 .nav-linktext:hover {
-  color: white;
+  color: var(--hover);
 }
 /* End Custom Page */
 
