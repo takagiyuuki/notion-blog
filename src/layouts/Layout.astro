@@ -55,7 +55,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
     <meta name="generator" content={Astro.generator} />
     <title>{siteTitle}</title>
     <meta name="description" content={siteDescription} />
-    <link rel="canonical" href={siteURL} />
+    <a rel="canonical" href={siteURL} />
     <meta property="og:url" content={siteURL} />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={siteDescription} />
@@ -65,7 +65,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
     <meta name="twitter:description" content={siteDescription} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImage || siteOGImage} />
-    <link
+    <a
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
       integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
@@ -74,6 +74,42 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
   </head>
   <body>
     <GoogleAnalytics trackingId={PUBLIC_GA_TRACKING_ID} />
+    <!-- Start Custom Navigation Bar -->
+    <div class="custom-nav">
+      <header>
+        <h1><a href="https://portfolio-azi.pages.dev">Portfolio website</a></h1>
+      </header>
+      <nav class="nav-bar">
+        <ul class="nav-links">
+          <li class="nav-linkitem">
+            <a href="https://portfolio-azi.pages.dev/about" class="nav-linktext">
+              About
+            </a>
+          </li>
+          <li class="nav-linkitem">
+            <a href="https://portfolio-azi.pages.dev/contact" class="nav-linktext">
+              Contact
+            </a>
+          </li>
+          <li class="nav-linkitem">
+            <a href="https://notion-blog-8kd.pages.dev" class="nav-linktext">
+              Blog
+            </a>
+          </li>
+          <li class="nav-linkitem">
+            <a href="https://portfolio-azi.pages.dev/services" class="nav-linktext">
+              Services
+            </a>
+          </li>
+          <li class="nav-linkitem">
+            <a href="https://portfolio-azi.pages.dev/artwork" class="nav-linktext">
+              Artwork
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- End ustom Navigation Bar -->
     <div class="container">
       <main>
         {
@@ -142,6 +178,53 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
 </html>
 
 <style define:vars={{ asidePaddingTop }}>
+/* Start Custom Page */
+.custom-nav header {
+    background-color: var(--fg);
+}
+.custom-nav header.site-title {
+    padding-left: 1rem;
+    font-size: 2rem;
+    max-width: max-content;
+    min-width: min-content;
+    color: var(--fg);
+    font-weight: 700;
+    text-decoration: none;
+}
+.custom-nav header.site-title:hover {
+    color: var(--hover);
+}
+.nav-bar {
+  background-color: var(--fg);
+  border: solid;
+}
+@media (max-width: 500px) {
+  .nav-bar {
+    display: none;
+  }
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+.nav-link-item {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-bottom: 0;
+}
+.nav-link-text {
+  color: var(--bg);
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav-link-text:hover {
+  color: white;
+}
+/* End Custom Page */
+
   .container {
     display: flex;
     min-height: 100vh;
@@ -276,6 +359,9 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
       'Helvetica Neue', sans-serif;
     --font-mono: SFMono-Regular, Menlo, Consolas, 'PT Mono', 'Liberation Mono',
       Courier, monospace;
+    /* Start Custom */
+    --hover: #666;
+    /* End Custom */
   }
 
   * {
